@@ -12,9 +12,9 @@ class Animal:
         self.hidden = hidden
         Animal.alive.append(self)
 
-    def __del__(self) -> None:
-        if self.hidden and self in Animal.alive:
-            Animal.alive.remove(self)
+    @classmethod
+    def cleanup_dead_animals(cls) -> None:
+        cls.alive = [animal for animal in cls.alive if animal.health > 0]
 
     def hide(self) -> None:
         self.hidden = not self.hidden
