@@ -19,10 +19,10 @@ class Animal:
     def hide(self) -> None:
         self.hidden = not self.hidden
 
-    def __str__(self) -> None:
+    def __str__(self) -> str:
         return f"{{Name: {self.name}, Health: {self.health}, Hidden: {self.hidden}}}"
 
-    def __repr__(self) -> None:
+    def __repr__(self) -> str:
         return str(self)
 
 
